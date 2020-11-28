@@ -1,0 +1,22 @@
+<mat-card class="v-matcard-content-whole" [ngStyle]="getWidthInRem(width)">
+    <mat-card-header *ngIf="header">
+        <div *ngIf="avatarImgUrl && header" [ngStyle]="convertImageObj(avatarImgUrl)" mat-card-avatar
+            class="v-header-image"></div>
+        <mat-card-title *ngIf="title && header">{{title}}</mat-card-title>
+        <mat-card-subtitle *ngIf="subtitle && header">{{subtitle}}</mat-card-subtitle>
+        <ng-content select="[v-card-header]"></ng-content>
+    </mat-card-header>
+    <!-- <mat-divider class="v-card-divider"></mat-divider> -->
+    <img mat-card-image *ngIf="cardImage" [ngStyle]="getImageSize(cardImgHeight,cardImgWidth)" src="{{cardImage}}">
+    <div mat-card-content [ngStyle]="{height:'300px',background:'$c-red'}" *ngIf="content">
+        <ng-content select="[v-card-content]"></ng-content>
+    </div>
+    <!-- <mat-divider class="v-card-divider"></mat-divider> -->
+    <mat-card-actions *ngIf="actions" align="{{actionAlign}}">
+        <ng-content select=[v-card-actions]></ng-content>
+    </mat-card-actions>
+    <!-- <mat-divider class="v-card-divider"></mat-divider> -->
+    <mat-card-footer class="v-card-footer-content" *ngIf="footer">
+        <ng-content select=[v-card-footer]></ng-content>
+    </mat-card-footer>
+</mat-card>

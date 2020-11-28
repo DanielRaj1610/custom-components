@@ -1,0 +1,48 @@
+.v-adv-expansion-whole {
+  display: grid;
+  grid-template-columns: 1fr 12fr;
+  grid-template-areas: "side-buttons expansion-whole";
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+.side-buttons {
+  grid-area: side-buttons;
+  width: min-content;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.side-button-number {
+  font-size: 1.4rem;
+}
+.expansion-whole {
+  grid-area: expansion-whole;
+}
+
+.v-panel {
+  &-header {
+    width: -webkit-fill-available;
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+  }
+  &-description {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-btn-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &-description-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}

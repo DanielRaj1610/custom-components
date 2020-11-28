@@ -1,0 +1,26 @@
+.cards-layout {
+  display: grid;
+  grid-template-areas:
+    "cards-full cards-content"
+    "cards-full cards-header"
+    "cards-full cards-button";
+}
+.cards-full {
+  grid-area: cards-full;
+}
+.cards-content {
+  grid-area: cards-content;
+}
+
+.cards-header {
+  grid-area: cards-header;
+}
+
+.cards-button {
+  grid-area: cards-button;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

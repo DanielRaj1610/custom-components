@@ -1,0 +1,53 @@
+<section class="v-adv-expansion-whole">
+    <section class="side-buttons">
+        <div class="side-button">
+            <button mat-fab color="primary" (click)="nextStep()" aria-label="Example icon button with a home icon">
+                <span class="side-button-number">{{cardNumber}}</span>
+            </button>
+        </div>
+    </section>
+    <section class="expansion-whole">
+        <mat-accordion class="v-accordion-whole" hideToggle>
+            <mat-expansion-panel [expanded]="step === 0" (closed)="step = 1" (opened)="setStep(0)">
+                <mat-expansion-panel-header class="">
+                    <div class="v-panel-header">
+                        <mat-panel-title class="v-panel-title">
+                            {{title}}
+                        </mat-panel-title>
+                        <mat-panel-description class="v-panel-description">
+                            <div class="v-panel-description-content">
+                                {{titleDesc}}
+                            </div>
+                            <div class="v-panel-btn-group">
+                                <button mat-raised-button color="primary" *ngIf="saveReq"
+                                    (click)="nextStep()">Save</button>
+                                <button mat-icon-button color="accent">
+                                    <mat-animated-icon start="add" end="remove" colorStart="primary" colorEnd="accent"
+                                        [animate]="step=== 0"></mat-animated-icon>
+                                </button>
+                            </div>
+                        </mat-panel-description>
+                    </div>
+                </mat-expansion-panel-header>
+
+                <!-- <mat-form-field>
+                    <mat-label>First name</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Age</mat-label>
+                    <input matInput type="number" min="1">
+                </mat-form-field> -->
+
+                <ng-content select="[v-expansion-content]"></ng-content>
+
+                <!-- #docregion action-bar -->
+                <mat-action-row>
+                    <button mat-button color="primary" (click)="nextStep()">Save</button>
+                </mat-action-row>
+                <!-- #enddocregion action-bar -->
+            </mat-expansion-panel>
+        </mat-accordion>
+    </section>
+</section>

@@ -1,0 +1,12 @@
+@import "../../../scss/mixins.scss";
+
+:host {
+  @include mat-design-icon-mixin();
+
+  .material-icons {
+    transition: transform 0.8s;
+    &.animate {
+      transform: rotate(360deg);
+    }
+  }
+}
