@@ -24,3 +24,19 @@
   justify-content: space-between;
   align-items: center;
 }
+.main_content {
+  width: 100%;
+  height: calc(100vh);
+  background: #efefef;
+}
+
+.main_content {
+  display: grid;
+  grid-template-areas:
+    "cards-layout"
+    "expansion-panel";
+}
+
+.highcharts {
+  background-color: #efefef;
+}

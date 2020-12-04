@@ -1,98 +1,131 @@
-<div class="cards-layout">
-    <div class="cards-full">
-        <v-cards header="true" content="true" actions="true" footer="true" actionAlign='end'
-            avatarImgUrl="https://images.unsplash.com/photo-1606229155208-1a5e7bfead60?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=665&q=80"
-            cardImage="https://images.unsplash.com/photo-1606248627653-f3d6b573deb8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60"
-            title="Test Card" subtitle="subtitle content here">
+<div>
+    <v-header [sidenav]="leftSidenav"></v-header>
 
-            <ng-container v-card-header>
-                Any custom header content here
-            </ng-container>
+    <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav #leftSidenav mode="side" opened position="end">
+            <v-sidenav-menu></v-sidenav-menu>
+        </mat-sidenav>
+        <mat-sidenav-content [@onMainContentChange]="onSideNavChange ? 'open': 'close'">
+            <div class="main_content">
+                <!-- <div style="padding: 20px"> -->
+                <!-- <div class="cards-layout">
+                    <div class="cards-full">
+                        <v-cards header="true" content="true" actions="true" footer="true" actionAlign='end'
+                            avatarImgUrl="https://images.unsplash.com/photo-1606229155208-1a5e7bfead60?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=665&q=80"
+                            cardImage="https://images.unsplash.com/photo-1606248627653-f3d6b573deb8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60"
+                            title="Test Card" subtitle="subtitle content here">
 
-            <ng-container v-card-content>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti libero earum ullam tempore ad
-                voluptate et
-                placeat doloremque quae necessitatibus harum, itaque rerum repudiandae, excepturi assumenda sequi.
-                Corporis,
-                quaerat reprehenderit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero voluptates nulla nam doloremque suscipit
-                doloribus omnis! Tempore suscipit iure incidunt sed praesentium itaque accusamus, repudiandae quaerat
-                provident
-                similique ipsam optio.
-            </ng-container>
+                            <ng-container v-card-header>
+                                Any custom header content here
+                            </ng-container>
 
-            <ng-container v-card-actions>
-                <button mat-button color="primary">Simple button</button>
-            </ng-container>
+                            <ng-container v-card-content>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti libero earum ullam
+                                tempore ad
+                                voluptate et
+                                placeat doloremque quae necessitatibus harum, itaque rerum repudiandae, excepturi
+                                assumenda sequi.
+                                Corporis,
+                                quaerat reprehenderit.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero voluptates nulla nam
+                                doloremque suscipit
+                                doloribus omnis! Tempore suscipit iure incidunt sed praesentium itaque accusamus,
+                                repudiandae quaerat
+                                provident
+                                similique ipsam optio.
+                            </ng-container>
 
-            <ng-container v-card-footer>
-                Any custom footer content here
-            </ng-container>
-        </v-cards>
-    </div>
-    <div class="cards-content">
-        <h2>Cards with only content</h2>
-        <v-cards content="true">
-            <ng-container v-card-content>
-                <b>Content Only Card:-</b>
-                <div><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit harum corrupti distinctio.
-                        Architecto
-                        nihil vel ea, praesentium repudiandae eaque sit, nobis, quod consequuntur ipsa impedit minima
-                        quasi
-                        corrupti dolorem adipisci? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia odio
-                        culpa
-                        unde voluptas quae placeat aliquid nihil, at fuga, molestias excepturi cumque iste illum iure
-                        veritatis modi consequatur. Suscipit, eligendi?</em>
+                            <ng-container v-card-actions>
+                                <button mat-button color="primary">Simple button</button>
+                            </ng-container>
+
+                            <ng-container v-card-footer>
+                                Any custom footer content here
+                            </ng-container>
+                        </v-cards>
+                    </div>
+                    <div class="cards-content">
+                        <h2>Cards with only content</h2>
+                        <v-cards content="true">
+                            <ng-container v-card-content>
+                                <b>Content Only Card:-</b>
+                                <div><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit harum
+                                        corrupti distinctio.
+                                        Architecto
+                                        nihil vel ea, praesentium repudiandae eaque sit, nobis, quod consequuntur
+                                        ipsa impedit minima
+                                        quasi
+                                        corrupti dolorem adipisci? Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Quia odio
+                                        culpa
+                                        unde voluptas quae placeat aliquid nihil, at fuga, molestias excepturi
+                                        cumque iste illum iure
+                                        veritatis modi consequatur. Suscipit, eligendi?</em>
+                                </div>
+                            </ng-container>
+                        </v-cards>
+                    </div>
+                    <div class="cards-header">
+                        <h2>Header only card</h2>
+                        <v-cards header="true">
+                            <ng-container v-card-header>
+                                Title will go here
+                            </ng-container>
+                        </v-cards>
+                    </div>
+                    <div class="cards-button">
+                        <h3>Card with Buttons</h3>
+                        <v-cards actions="true" actionAlign="end">
+                            <div v-card-actions>
+                                <div class="button-container">
+                                    <button mat-raised-button color="accent">Simple button</button>
+                                    <button mat-mini-fab color="warn"
+                                        aria-label="Example icon button with a filter list icon">
+                                        <mat-icon>filter_list</mat-icon>
+                                    </button>
+                                    <button mat-fab color="warn" aria-label="Example icon button with a home icon">
+                                        <mat-icon>home</mat-icon>
+                                    </button>
+                                    <button mat-icon-button color="accent"
+                                        aria-label="Example icon button with a menu icon">
+                                        <mat-icon>menu</mat-icon>
+                                    </button>
+                                </div>
+                            </div>
+                        </v-cards>
+                    </div>
+                </div> -->
+
+                <div class="expansion-panel">
+                    <v-adv-expansion cardNumber="1" title="Title 1" titleDesc="Title 1 desccription here"
+                        saveReq="true">
+                        <ng-container v-expansion-content>
+                            <form fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="onSubmit()"
+                                [formGroup]="authForm">
+                                <v-mt-input inputType="text" label="Username" [control]="authForm.get('username')">
+                                </v-mt-input>
+
+                                <div>
+                                    <button mat-button class="ui submit button primary">Submit</button>
+                                </div>
+                            </form>
+                        </ng-container>
+                    </v-adv-expansion>
+                    <v-adv-expansion cardNumber="2" title="Title 2" titleDesc="Title 2 desccription here"
+                        saveReq="false">
+                    </v-adv-expansion>
+                    <v-adv-expansion cardNumber="3" title="Title 3" titleDesc="Title 3 desccription here"
+                        saveReq="false">
+                    </v-adv-expansion>
                 </div>
-            </ng-container>
-        </v-cards>
-    </div>
-    <div class="cards-header">
-        <h2>Header only card</h2>
-        <v-cards header="true">
-            <ng-container v-card-header>
-                Title will go here
-            </ng-container>
-        </v-cards>
-    </div>
-    <div class="cards-button">
-        <h3>Card with Buttons</h3>
-        <v-cards actions="true" actionAlign="end">
-            <div v-card-actions>
-                <div class="button-container">
-                    <button mat-raised-button color="accent">Simple button</button>
-                    <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon">
-                        <mat-icon>filter_list</mat-icon>
-                    </button>
-                    <!-- <div class="example-button-container"> -->
-                    <button mat-fab color="warn" aria-label="Example icon button with a home icon">
-                        <mat-icon>home</mat-icon>
-                    </button>
-                    <!-- </div> -->
-                    <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
-                        <mat-icon>menu</mat-icon>
-                    </button>
+                <div class="highcharts">
+                    <!-- <highcharts-chart [Highcharts]="highcharts" [options]="chartOptions"
+                        style="width: 100%; height: 400px; display: block;">
+                    </highcharts-chart> -->
                 </div>
+                <!-- </div> -->
             </div>
-        </v-cards>
-    </div>
-</div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
 
-<div class="expansion-panel">
-    <v-adv-expansion cardNumber="1" title="Title 1" titleDesc="Title 1 desccription here" saveReq="true">
-        <ng-container v-expansion-content>
-            <form fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="onSubmit()" [formGroup]="authForm">
-                <v-mt-input inputType="text" label="Username" [control]="authForm.get('username')"></v-mt-input>
-                <!-- <app-mt-password inputType="password" label="Password" [control]="authForm.get('password')">
-                </app-mt-password> -->
-                <div>
-                    <button mat-button class="ui submit button primary">Submit</button>
-                </div>
-            </form>
-        </ng-container>
-    </v-adv-expansion>
-    <v-adv-expansion cardNumber="2" title="Title 2" titleDesc="Title 2 desccription here" saveReq="false">
-    </v-adv-expansion>
-    <v-adv-expansion cardNumber="3" title="Title 3" titleDesc="Title 3 desccription here" saveReq="false">
-    </v-adv-expansion>
 </div>
